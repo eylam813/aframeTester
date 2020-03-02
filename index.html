@@ -8,10 +8,11 @@
     <!-- use of aframe -->
     <!-- <script src="../aframeTester/js/aframe.min.js"></script> -->
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
     <!-- auto play asset animations -->
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <!-- curved images -->
-    <script src="../aframeTester/js/a-curvedimage.js"></script>
+    <!-- <script src="src/extras/primitives/primitives/a-curvedimage.js"></script> -->
 
 
 </head>
@@ -20,8 +21,16 @@
 
     <a-scene>
         <a-assets>
+            <!-- lights -->
+            <a-mixin id="light" geometry="primitive: sphere; radius: 1.5" material="color: #FFF; shader: flat"
+                light="color: #99DDFF; distance: 120; intensity: 1; type: point"></a-mixin>
+
+            <!-- FONTS -->
+            <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
             <!-- IMAGES ---------- -->
-            <img id="my-image" src="../aframeTester/trial/images/img012.jpg">
+            <!-- <img id="my-image" src="../aframeTester/trial/images/img012.jpg">
+            <a-asset-item id="my-image" src="../aframeTester/trial/images/img012.jpg"></a-asset-item> -->
+
             <!-- 3D ASSETS---------- -->
             <!-- elf character -->
             <a-asset-item id="cityModel" src="../trial/person/person.gltf"></a-asset-item>
@@ -30,43 +39,93 @@
         </a-assets>
 
 
-
-
         <!-- ------ CAMERAS -------- -->
         <!-- <a-entity id="rig" position="0 13 20"> -->
-            <a-camera id="camera" camera look-controls position="0 0 20"></a-camera>
+        <!-- <a-camera id="camera" camera look-controls position="0 10 20"></a-camera> -->
         <!-- </a-entity> -->
 
         <!-- <a-entity id="rig2" position="20 13 20"> -->
-            <!-- <a-camera id="camera2" camera position="20 63 20" look-controls></a-camera> -->
+        <a-camera id="camera2" camera position="0 13 20" look-controls>
+            <a-cursor position="0 0 -3" geometry="primitive: ring; radiusOuter: 0.030; radiusInner: 0.020;"
+                material="color: #11d8c4; shader: flat" fuse="true" timeout="10">
+            </a-cursor>
+        </a-camera>
         <!-- </a-entity> -->
 
 
+        <!-- TEXT -->
+        <!-- <a-entity text="value: Hello World;"></a-entity> -->
+        <!-- <a-entity text="font: mozillavr; value: Via stock font name."></a-entity> -->
+        <a-entity text="font: https://cdn.aframe.io/fonts/mozillavr.fnt; value: Via URL."></a-entity>
+        <!-- <a-entity text="text: Hello World; font: ../fonts/DejaVu-sdf.fnt; fontImage: ../fonts/DejaVu-sdf.png"></a-entity> -->
+        <a-text color="brown" width="10" position="0 16 16" font="https://cdn.aframe.io/fonts/mozillavr.fnt" value="Indigenous History"></a-text>
 
-        <!-- ------ 3D ASSETS -------- -->
 
-        <!-- elf character -->
-        <a-entity gltf-model="#cityModel" scale="10.5 10.5 10.5" position="0 .3 -1.5" rotation="0 15 0"></a-entity>
-        <!-- animated dog -->
-        <a-entity gltf-model="#animatedPetModel" scale="0.1 0.1 0.1" position="-10 0 7" rotation="0 35 0"
-            animation-mixer></a-entity>
+
+
+
 
         <!-- ------ IMAGE ASSETS -------- -->
-        <a-curvedimage src="#my-image" height="7.0" radius="5.7" theta-length="72" position="-30 .3 -1.5"
+        <!-- <a-curvedimage src="#my-image" height="7.0" radius="5.7" theta-length="72" position="-30 .3 -1.5"
             rotation="0 100 0" scale="1 1 1"></a-curvedimage>
-        <a-image src="#my-image"></a-image>
+        <a-image src="#my-image"></a-image> -->
 
 
-        <!-- shapes -->
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <!-- TIME 1 -->
+        <a-entity geometry="primitive: circle; radius: 8" rotation="-90 0 0" position="-100 3.5 3" color="#EF2D5E">
+        </a-entity>
+
+        <!-- TIME 2 -->
+        <a-entity geometry="primitive: circle; radius: 8" rotation="-90 0 0" position="0 0.5 3" color="#EF2D5E">
+        </a-entity>
+        <!-- elf character -->
+        <a-entity gltf-model="#cityModel" scale="10.5 10.5 10.5" position="0 1 -1.5" rotation="0 0 0"></a-entity>
+        <!-- animated dog -->
+        <a-entity gltf-model="#animatedPetModel" scale="0.1 0.1 0.1" position="-10 1 2" rotation="0 -25 0"
+            animation-mixer></a-entity>
+
+        <!-- TIME 3 -->
+        <a-entity geometry="primitive: circle; radius: 8" rotation="-90 0 0" position="83 0.5 -25" color="#EF2D5E">
+        </a-entity>
+
+        <!-- TIME 4 -->
+        <a-entity geometry="primitive: circle; radius: 8" rotation="-90 0 0" position="83 0.5 25" color="#EF2D5E">
+        </a-entity>
+
+
+
+
+
+
+
+
+        <!-- ENVIRONMENT -->
+
+        <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        <a-sky color="#ECECEC"></a-sky>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
+        <!-- sidewalk / path -->
+        <a-plane position="140 0.1 -39" rotation="-90 12 0" width="350" height="25" color="#ECECEC"></a-plane>
+        <!-- angled back-->
+        <a-plane position="140 0.1 35" rotation="-90 -12 0" width="350" height="25" color="#ECECEC"></a-plane>
+        <!-- angled forward-->
+        <a-plane position="-250 0.1 -4" rotation="-90 0 0" width="500" height="30" color="#ECECEC"></a-plane>
+        <!-- straight -->
+        <!-- green pasture -->
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="800" height="800" color="#7BC8A4"></a-plane>
+        <!-- sky -->
+        <a-sky color="#ADE8F0"></a-sky>
+        <!-- light -->
+        <!-- <a-entity light="type: hemisphere; color: #33C; groundColor: #000; intensity: 2"></a-entity> -->
+        <!-- <a-entity light="type: ambient; color: #33C"></a-entity> -->
+        <a-entity animation="property: rotation; to: 50 0 160; dur: 50000; easing: linear; loop: true">
+            <a-entity mixin="light" position="30 0 60"></a-entity>
+        </a-entity>
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.3" position="-0.5 1 1"></a-entity>
 
     </a-scene>
 
-    <script src="../aframeTester/js/a-curvedimage.js"></script>
 </body>
 
 </html>
