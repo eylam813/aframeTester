@@ -11,6 +11,8 @@
     <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
     <!-- auto play asset animations -->
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <!-- camera feed -->
+    <script src="https://rawgit.com/flysonic10/aframe-passthrough/master/dist/aframe-passthrough-component.min.js"></script>
     <!-- curved images -->
     <!-- <script src="src/extras/primitives/primitives/a-curvedimage.js"></script> -->
 
@@ -38,6 +40,7 @@
             <a-asset-item id="animatedPetModel" src="../trial/dog/scene.gltf"></a-asset-item>
         </a-assets>
 
+        <a-passthrough width="16" height="9"></a-passthrough>
 
         <!-- ------ CAMERAS -------- -->
         <!-- <a-entity id="rig" position="0 13 20"> -->
@@ -54,10 +57,6 @@
 
 
         <!-- TEXT -->
-        <!-- <a-entity text="value: Hello World;"></a-entity> -->
-        <!-- <a-entity text="font: mozillavr; value: Via stock font name."></a-entity> -->
-        <a-entity text="font: https://cdn.aframe.io/fonts/mozillavr.fnt; value: Via URL."></a-entity>
-        <!-- <a-entity text="text: Hello World; font: ../fonts/DejaVu-sdf.fnt; fontImage: ../fonts/DejaVu-sdf.png"></a-entity> -->
         <a-text color="brown" width="10" position="0 16 16" font="https://cdn.aframe.io/fonts/mozillavr.fnt" value="Indigenous History"></a-text>
 
 
@@ -115,7 +114,10 @@
         <a-plane position="0 0 -4" rotation="-90 0 0" width="800" height="800" color="#7BC8A4"></a-plane>
         <!-- sky -->
         <a-sky color="#ADE8F0"></a-sky>
-        <!-- light -->
+
+
+
+        <!-- LIGHTS -->
         <!-- <a-entity light="type: hemisphere; color: #33C; groundColor: #000; intensity: 2"></a-entity> -->
         <!-- <a-entity light="type: ambient; color: #33C"></a-entity> -->
         <a-entity animation="property: rotation; to: 50 0 160; dur: 50000; easing: linear; loop: true">
