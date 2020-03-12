@@ -1,0 +1,33 @@
+{
+  "name": "aframe-tester",
+  "version": "1.0.0",
+  "description": "aframeTester",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo --live --verbose --port 3000 --open",
+    "deploy": "ghpages",
+    "ghpages": "ghpages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eylam813/aframeTester.git"
+  },
+  "devDependencies": {
+    "budo": "^7.0.0",
+    "ghpages": "0.0.10"
+  },
+  "keywords": [
+    "aframe",
+    "aframe-example",
+    "aframe-boilerplate",
+    "aframe-scene",
+    "webvr",
+    "vr"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eylam813/aframeTester/issues"
+  },
+  "homepage": "https://github.com/eylam813/aframeTester#readme"
+}
