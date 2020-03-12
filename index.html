@@ -42,6 +42,7 @@
             <!-- animated dog -->
             <a-asset-item id="animatedPetModel" src="../assets/dog/scene.gltf"></a-asset-item>
             <a-asset-item id="fish-remote2" src="../assets/fish-remote2/BarramundiFish.glb"></a-asset-item>
+            <a-asset-item id="fish-convert" src="../assets/fbx-fish/SM_Fish_Cod.glb"></a-asset-item>
         </a-assets>
 
         <a-passthrough width="16" height="9"></a-passthrough>
@@ -84,6 +85,7 @@
         <a-entity geometry="primitive: circle; radius: 8" rotation="-90 0 0" position="0 0.5 3" color="#EF2D5E">
         </a-entity>
         <!-- elf character -->
+        <a-entity gltf-model="#fish-convert" scale="3 3 3" position="7.5 2.5 -1.5" rotation="0 15 0"></a-entity>
         <a-entity gltf-model="#fish-remote2" scale="3 3 3" position="3.5 2.5 -1.5" rotation="0 -15 0"></a-entity>
         <a-entity gltf-model="#fish-remote2" scale="5 5 5" position="3 1 -1.5" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#cityModel" scale="1 1 1" position="0 1 -1.5" rotation="0 0 0"></a-entity>
