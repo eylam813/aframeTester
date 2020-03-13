@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aframeTester</title>
+    <link rel="stylesheet" href="./css/style.css">
     <!-- use of aframe -->
-    <!-- <script src="../aframeTester/js/aframe.min.js"></script> -->
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <!-- text renderer script-->
-    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js">
+    </script>
     <!-- auto play asset animations -->
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <!-- camera feed -->
-    <script src="https://rawgit.com/flysonic10/aframe-passthrough/master/dist/aframe-passthrough-component.min.js">
-    </script>
+    <!-- <script src="https://rawgit.com/flysonic10/aframe-passthrough/master/dist/aframe-passthrough-component.min.js"></script> -->
+
     <!-- curved images -->
     <!-- <script src="src/extras/primitives/primitives/a-curvedimage.js"></script> -->
 
@@ -46,19 +47,32 @@
             <a-asset-item id="tree" src="../assets/tree/tree_from_Maya.glb"></a-asset-item>
         </a-assets>
 
-        <a-passthrough width="16" height="9"></a-passthrough>
+        <!-- <a-passthrough width="16" height="9"></a-passthrough> -->
+
+        <!-- ------- FIXED ELEMENTS ------- -->
+        <h1>Camera 1</h1>
+        <h2>Camera 2</h2>
 
         <!-- ------ CAMERAS -------- -->
-        <!-- <a-entity id="rig" position="0 13 20">
-            <a-camera id="camera" camera look-controls position="0 10 20"></a-camera>
-        </a-entity> -->
+        <a-entity id="rig">
+            <a-camera id="camera" camera active look-controls position="0 10 20">
+                <a-cursor position="0 0 -3" geometry="primitive: ring; radiusOuter: 0.030; radiusInner: 0.020;"
+                    material="color: #11d8c4; shader: flat" fuse="true" timeout="10">
+                </a-cursor>
+            </a-camera>
+            <a-camera id="camera2b" camera look-controls position="0 30 10">
+                <a-cursor position="0 0 -3" geometry="primitive: ring; radiusOuter: 0.030; radiusInner: 0.020;"
+                    material="color: #11d8c4; shader: flat" fuse="true" timeout="10">
+                </a-cursor>
+            </a-camera>
+        </a-entity>
 
         <!-- <a-entity id="rig2" position="20 13 20"> -->
-        <a-camera id="camera2" camera position="0 3 10" look-controls>
+        <!-- <a-camera id="camera2" camera position="0 3 10" look-controls>
             <a-cursor position="0 0 -3" geometry="primitive: ring; radiusOuter: 0.030; radiusInner: 0.020;"
                 material="color: #11d8c4; shader: flat" fuse="true" timeout="10">
             </a-cursor>
-        </a-camera>
+        </a-camera> -->
         <!-- </a-entity> -->
 
 
@@ -141,7 +155,7 @@
         <a-entity light="type: directional; color: #FFF; intensity: 0.3" position="-0.5 1 1"></a-entity>
 
     </a-scene>
-
+    <script src="./js/lakeview.js"></script>
 </body>
 
 </html>
