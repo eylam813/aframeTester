@@ -57,6 +57,7 @@ require('present'); // Polyfill `performance.now()`.
 if (utils.device.isBrowserEnvironment) {
   require('./style/aframe.css');
   require('./style/rStats.css');
+  require('./style/lakeviewStyles.css');
 }
 
 // Required before `AEntity` so that all components are registered.

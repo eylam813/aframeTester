@@ -1,0 +1,17 @@
+
+/* h2{
+    position: fixed;
+    z-index: 100;
+    left: 5%;
+    top: 5%;
+} */
+nav{
+    position: fixed;
+    z-index: 100;
+    left: 5%;
+    top: 5%;
+}
+
+nav h2{
+    margin: 20px 0;
+}
